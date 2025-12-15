@@ -1,0 +1,50 @@
+{
+  "picoctf": {
+    "web-exploitation": {
+      "challenge1": {
+        "writeup": "This is my write-up for this first challenge of the web-exploitation category of picoCTF"
+      },
+      "challenge2": {
+        "writeup": "This is my write-up for this second challenge of the web-exploitation category of picoCTF"
+      },
+      "challenge3": {
+        "writeup": "This is my write-up for this third challenge of the web-exploitation category of picoCTF"
+      }
+    },
+    "cryptography": {
+      "challenge1": {
+        "writeup": "This is my write-up for this first challenge of the cryptography category of picoCTF"
+      },
+      "challenge2": {
+        "writeup": "This is my write-up for this second challenge of the cryptography category of picoCTF"
+      },
+      "challenge3": {
+        "writeup": "This is my write-up for this third challenge of the cryptography category of picoCTF"
+      }
+    }
+  },
+  "rootme": {
+    "web-exploitation": {
+      "challenge1": {
+        "writeup": "This is my write-up for this first challenge of the web-exploitation category of Root-Me"
+      },
+      "challenge2": {
+        "writeup": "This is my write-up for this second challenge of the web-exploitation category of Root-Me"
+      },
+      "challenge3": {
+        "writeup": "This is my write-up for this third challenge of the web-exploitation category of Root-Me"
+      }
+    },
+    "cryptography": {
+      "challenge1": {
+        "writeup": "This is my write-up for this first challenge of the cryptography category of Root-Me"
+      },
+      "challenge2": {
+        "writeup": "This is my write-up for this second challenge of the cryptography category of Root-Me"
+      },
+      "challenge3": {
+        "writeup": "This is my write-up for this third challenge of the cryptography category of Root-Me"
+      }
+    }
+  }
+}

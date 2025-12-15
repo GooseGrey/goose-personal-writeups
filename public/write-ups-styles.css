@@ -1,0 +1,92 @@
+/*
+  Name: Goose
+  Date: December 15, 2025
+  This is the write-ups-styles.css that provides specific
+  styling for my personal write-ups HTML page.
+*/
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+li {
+  list-style: none;
+}
+
+li p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+form {
+  gap: 10px;
+}
+
+input[type="text"], button[type="submit"], .reset-button {
+  align-self: center;
+  font-size: 14pt;
+  color: rgb(255, 250, 223);
+  background-color: rgb(3, 15, 29);
+  border: 2px solid rgb(84, 188, 103);
+  border-radius: 5px;
+  margin: 5px;
+}
+
+input[type="text"]::placeholder {
+  color: rgb(255, 250, 223, 0.8);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid rgb(255, 250, 223);
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+}
+
+details summary::marker {
+  display: none;
+}
+
+details summary::before {
+  content: "▶ ";
+  margin-right: 5px;
+}
+
+
+details[open] summary::before {
+  content: "▼ ";
+}
+
+div.challenge p {
+  text-align: left;
+}
+
+.user-input, #contribution-proposal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#definition-input-and-display {
+  margin-bottom: 40px;
+}
+
+#sticker-images img {
+  border: none;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+}
+
+#display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

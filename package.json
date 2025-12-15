@@ -1,0 +1,24 @@
+{
+  "name": "goose_personal_writeups",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/GooseGrey/goose_personal_writeups#readme",
+  "bugs": {
+    "url": "https://github.com/GooseGrey/goose_personal_writeups/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GooseGrey/goose_personal_writeups.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.0.2"
+  }
+}

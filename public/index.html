@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+  Name: Goose
+  Date: December 15, 2025
+  This is the index.html page where I present my personal write-ups for ctf challenges
+  I have solved and want to share.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="write-ups-styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&family=MedievalSharp&family=Share+Tech+Mono&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="index.js"></script>
+    <script src="global.js"></script>
+    <title>Goose-writeups</title>
+  </head>
+  <body class="auto-side-margin">
+    <header class="flexbox-rounded">
+      <img  id="logo" src="img/logo/logo-goose.png" alt="Logo of Goose CTF">
+      <p>Goose Write-ups</p>
+      <nav class="flexbox-rounded">
+        <a href="about.html">About Me</a>
+      </nav>
+    </header>
+    <section id="intro" class="flexbox-rounded">
+      <p>Welcome to my collection of CTF write-ups!</p>
+
+      <h2>CTFs</h2>
+      <p>
+        CTFs (Capture The Flag) are cybersecurity competitions where players solve challenges
+        in areas like web, crypto, or reverse engineering to find “flags.” They provide a fun,
+        legal way to practice hacking skills, problem-solving, and teamwork.
+      </p>
+
+      <h2>Search For A Specific Wargame Or Challenge</h2>
+      <input type="text" name="search" required="" placeholder="Enter your search . . .">
+      <button id="wargame-button" class="reset-button hidden">New wargame</button>
+    </section>
+
+    <hr>
+
+    <section id="display" class="hidden">
+      <button id="back-button" class="reset-button">Back</button>
+      <div id="writeup-content">
+        <!-- Write-up content will be loaded here -->
+      </div>
+    </section>
+
+    <section id="writeups-menu" class="flex-column-center">
+      <!-- Write-ups menu will be built here -->
+    </section>
+
+    <hr>
+
+    <footer>
+      <h3>Quote</h3>
+      <article class="flexbox-rounded">
+        <button id="translation">
+          <!-- Icon with MIT License -->
+          <img id="icon" src="icon/language-translation.svg" alt="Icon of translation">
+        </button>
+        <blockquote>
+          <p>
+            Quote not fetched yet.
+          </p>
+          <footer>TBD</footer>
+        </blockquote>
+      </article>
+    </footer>
+  </body>
+</html>

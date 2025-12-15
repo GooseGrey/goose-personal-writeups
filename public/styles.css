@@ -1,0 +1,198 @@
+/*
+  Name: Goose
+  Date: December 15, 2025
+  This is the styles.css that provides general styling for my personal write-ups HTML page.
+*/
+
+header {
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgb(84, 188, 103);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 36pt;
+  font-weight: bold;
+  color: rgb(3, 15, 29);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+article, form, ul, #intro {
+  flex-direction: column;
+}
+
+nav {
+  gap: 20px;
+}
+
+nav a {
+  color: rgb(3, 15, 29);
+  font-size: 35pt;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid rgb(3, 15, 29);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 250, 223);
+  padding: 5px;
+  background-color: rgb(3, 15, 29);
+  object-fit: cover;
+  display: block;
+  margin-right: 20px;
+  align-self: flex-start;
+}
+
+h4 {
+  margin: 0;
+  font-size: 17pt;
+  font-weight: normal;
+}
+
+body {
+  background-color: rgb(3, 15, 29);
+  font-family: "Titillium Web", sans-serif;
+  color: rgb(255, 250, 223);
+  width: 80%;
+}
+
+h1 {
+  font-size: 26pt;
+}
+
+h2 {
+  font-size: 20pt;
+}
+
+h3 {
+  font-size: 18pt;
+}
+
+a {
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  height: 3px;
+  background: rgb(84, 188, 103);
+}
+
+ul {
+  list-style-type: square;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+ul, ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+h1, h2, a {
+  color: rgb(84, 188, 103);
+}
+
+p, li, footer {
+  font-size: 14pt;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+footer p {
+  font-size: 10pt;
+}
+
+h1, h2, h3, p, li, footer {
+  text-align: center;
+}
+
+h1, h2, footer, hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+section img {
+  display: block;
+  max-width: 100%;
+  height: 220px;
+  width: auto;
+  border: 2px solid rgb(84, 188, 103);
+  border-radius: 10px;
+}
+
+blockquote p {
+  font-style: italic;
+  font-size: 10pt;
+}
+
+.auto-side-margin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flexbox-rounded {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.english-quote-font {
+  font-family: "IM Fell English", serif;
+}
+
+.highlight {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+#translation {
+  background-color: rgb(255, 250, 223);
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+#translation:hover {
+  border: solid 3px rgb(84, 188, 103);
+}
+
+#logo {
+  object-position: 50% 60%;
+  width: 105px;
+  height: 105px;
+}
+
+#icon {
+  width: 25px;
+  height: 25px;
+  border: none;
+}
+
+article button {
+  margin-left: 20px;
+}
