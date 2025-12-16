@@ -1,0 +1,13 @@
+{
+  "PicoCTF": {
+    "Binary-Exploitation": {
+      "test1": null
+    },
+    "Cryptography": {
+      "test2": null
+    },
+    "Web": {
+      "test3": null
+    }
+  }
+}
