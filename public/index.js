@@ -14,16 +14,84 @@
    * sets up necessary functionality when page loads
    */
   function init() {
-    id("wargame-button").addEventListener("click", newSite);
-    qs("input[name='search']").addEventListener("keydown", async (event) => {
-      if (event.key === "Enter") {
-        let word = event.target.value.trim();
-        if (word !== "") {
-          await fetchResponseWargamePresence();
+    qs("input[name='search']").addEventListener("input", filterMenu);
+
+    id("search-button").addEventListener("click", () => {
+        qs("input[name='search']").value = "";
+        filterMenu();
+    });
+
+    id("back-button").addEventListener("click", clearDisplayArea);
+
+    buildMenu();
+  }
+
+  /**
+   * Hides the display area.
+   */
+  function clearDisplayArea() {
+    id("display").classList.add("hidden");
+    id("writeups-menu").classList.remove("hidden");
+  }
+
+  /**
+   * Filters the menu items based on the search input.
+   * Handles 3 levels: Platform (div) -> Category (details) -> Challenge (li)
+   */
+  function filterMenu() {
+    const query = qs("input[name='search']").value.toLowerCase().trim();
+    const platforms = qsa("#writeups-menu > .category");
+    const searchButton = id("search-button");
+
+    if (query.length > 0) {
+        searchButton.classList.remove("hidden");
+    } else {
+        searchButton.classList.add("hidden");
+    }
+
+    platforms.forEach(platform => {
+      const platformName = platform.querySelector("h2")?.textContent.toLowerCase() || "";
+      const isPlatformMatch = platformName.includes(query);
+
+      let platformHasVisibleChildren = false;
+      const categories = platform.querySelectorAll("details");
+
+      categories.forEach(category => {
+        const categoryName = category.querySelector("summary")?.textContent.toLowerCase() || "";
+        const isCategoryMatch = isPlatformMatch || categoryName.includes(query);
+
+        let categoryHasVisibleChildren = false;
+        const challenges = category.querySelectorAll("li");
+
+        challenges.forEach(challenge => {
+          const challengeName = challenge.querySelector("p")?.textContent.toLowerCase() || "";
+          const isChallengeMatch = isCategoryMatch || challengeName.includes(query);
+
+          if (isChallengeMatch) {
+            challenge.classList.remove("hidden");
+            categoryHasVisibleChildren = true;
+          } else {
+            challenge.classList.add("hidden");
+          }
+        });
+
+        if (categoryHasVisibleChildren) {
+          category.classList.remove("hidden");
+
+          category.open = query.length > 0;
+
+          platformHasVisibleChildren = true;
+        } else {
+          category.classList.add("hidden");
         }
+      });
+
+      if (platformHasVisibleChildren) {
+        platform.classList.remove("hidden");
+      } else {
+        platform.classList.add("hidden");
       }
     });
-    buildMenu();
   }
 
   /**
@@ -65,7 +133,7 @@
 
       for (const [key, nestedData] of Object.entries(data)) {
 
-        const currentId = (idPrefix ? `${idPrefix}-` : '') + key.toLowerCase().replace(/[^a-z0-9]/g, '-');
+        const currentId = (idPrefix ? `${idPrefix}/` : '') + key.replace(/[^a-z0-9]/gi, '-')
 
         if (!idPrefix) {
           const div = document.createElement('div');
@@ -128,8 +196,9 @@
    */
   async function loadWriteup(path) {
     const contentArea = id("display");
+    id("writeups-menu").classList.add("hidden");
+    contentArea.classList.remove("hidden");
     contentArea.innerHTML = '<p>Loading write-up for ' + path + '...</p>';
-    console.log('Loading write-up for:', path);
 
     try {
         const response = await fetch(`./writeups/${path}.md`);
@@ -140,11 +209,17 @@
 
         const htmlContent = marked.parse(markdownText);
         contentArea.innerHTML = htmlContent;
-        console.log('Successfully loaded and rendered markdown for:', fileName);
+
+        let backButton = document.createElement("button");
+        backButton.id = "back-button";
+        backButton.classList.add("reset-button");
+        backButton.textContent = "Back";
+        backButton.addEventListener("click", clearDisplayArea);
+        contentArea.prepend(backButton);
     } catch (error) {
         contentArea.innerHTML = `
             <h3>Error Loading Content</h3>
-            <p>Could not load the write-up for "${fileName}". Please check the file path and console for errors.</p>
+            <p>Could not load the write-up for "${path}". Please check the file path and console for errors.</p>
             <p>Error details: ${error.message}</p>
         `;
         console.error('Failed to load markdown:', error);
@@ -171,11 +246,13 @@
    * @param {Error} error - the error that occurred when checking the wargame presence.
    */
   function handleErrorWargamePresence(error) {
+    let displayArea = id("display");
+    displayArea.innerHTML = "";
     console.error("Error checking wargame presence:", error);
     let newParagraph = document.createElement("p");
     newParagraph.id = "wargame-presence-response";
     newParagraph.textContent = "Sorry, we couldn't check that wargame at this time.";
-    id("intro").appendChild(newParagraph);
+    displayArea.appendChild(newParagraph);
   }
 
   /**
@@ -191,17 +268,6 @@
     id("wargame-button").classList.remove("hidden");
     section.appendChild(displayResponse);
   }
-
-  /**
-   * Prepares the UI for a new wargame presence input.
-   */
-  function newSite() {
-    rm(id("wargame-presence-response"));
-    qs("input[name='site']").classList.remove("hidden");
-    qs("input[name='site']").value = "";
-    id("wargame-button").classList.add("hidden");
-  }
-
 
   // Tools Functions
 

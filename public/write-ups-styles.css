@@ -34,6 +34,10 @@ input[type="text"], button[type="submit"], .reset-button {
   margin: 5px;
 }
 
+.reset-button:hover {
+  cursor: pointer;
+}
+
 input[type="text"]::placeholder {
   color: rgb(255, 250, 223, 0.8);
 }
@@ -67,26 +71,17 @@ div.challenge p {
   text-align: left;
 }
 
-.user-input, #contribution-proposal {
+.user-input {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
 
-#definition-input-and-display {
-  margin-bottom: 40px;
+#writeups-menu {
+  padding-bottom: 20px;
 }
 
-#sticker-images img {
-  border: none;
-  height: 80px;
-  width: 80px;
-  margin: 10px;
-}
-
-#display {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#display img {
+  margin-bottom: 20px;
 }
