@@ -37,24 +37,24 @@ app.get('/write-ups/', async (req, res) => {
     }
 });
 
-app.get('/quotes', async (req, res) => {
-  try {
-    let data = await readQuotesFile();
-    let quotes = data.quotes;
-    let randomQuote = getOneRandomQuote(quotes);
-    res.type('json').json(randomQuote);
-  } catch (error) {
-    if (error.code === "ENOENT") {
-      res.type('text')
-        .status(INTERNAL_SERVER_ERROR)
-        .send("File of quotes does not exist");
-    } else {
-      res.type('text')
-        .status(INTERNAL_SERVER_ERROR)
-        .send("something went wrong on server side");
-    }
-  }
-});
+// app.get('/quotes', async (req, res) => {
+//   try {
+//     let data = await readQuotesFile();
+//     let quotes = data.quotes;
+//     let randomQuote = getOneRandomQuote(quotes);
+//     res.type('json').json(randomQuote);
+//   } catch (error) {
+//     if (error.code === "ENOENT") {
+//       res.type('text')
+//         .status(INTERNAL_SERVER_ERROR)
+//         .send("File of quotes does not exist");
+//     } else {
+//       res.type('text')
+//         .status(INTERNAL_SERVER_ERROR)
+//         .send("something went wrong on server side");
+//     }
+//   }
+// });
 
 // Helper functions
 /**

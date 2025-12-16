@@ -47,14 +47,27 @@
    * Fetches a new quote from the server and displays it.
    */
   async function fetchQuote() {
+    // Server version (disabled)
+    // try {
+    //   let response = await fetch("/quotes");
+    //   await statusCheck(response);
+    //   currentQuote = await response.json();
+    //   displayQuote(currentQuote);
+    // } catch (error) {
+    //   handleErrorQuote(error, "Sorry, we couldn't load a quote at this time.");
+    // }
+
+    // Client-side version
+
     try {
-      let response = await fetch("/quotes");
-      await statusCheck(response);
-      currentQuote = await response.json();
-      displayQuote(currentQuote);
+      let response = await fetch('quotes.json');
+      const quotes = await response.json();
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      displayQuote(randomQuote);
     } catch (error) {
       handleErrorQuote(error, "Sorry, we couldn't load a quote at this time.");
     }
+
   }
 
   /**
