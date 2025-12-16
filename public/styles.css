@@ -5,21 +5,26 @@
 */
 
 header {
-  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: rgb(84, 188, 103);
   box-sizing: border-box;
   margin-bottom: 20px;
+  min-height: 120px;
+}
+
+#logo, header p, nav {
+  flex: 1;
+  margin: 0;
 }
 
 header p {
-  font-size: 36pt;
+  font-size: clamp(18pt, 4vw, 36pt);
   font-weight: bold;
   color: rgb(3, 15, 29);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
 }
 
 article, form, ul, #intro {
@@ -27,17 +32,26 @@ article, form, ul, #intro {
 }
 
 nav {
-  gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 200px;
 }
 
 nav a {
   color: rgb(3, 15, 29);
-  font-size: 35pt;
+  font-size: 22pt;
   font-weight: bold;
   text-decoration: none;
   border: 2px solid rgb(3, 15, 29);
   border-radius: 5px;
   padding: 5px 10px;
+}
+
+#logo {
+  margin-right: 95px;
+  max-width: 105px;
+  height: auto;
+  align-self: center;
 }
 
 header img {
@@ -195,4 +209,24 @@ blockquote p {
 
 article button {
   margin-left: 20px;
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    padding: 20px;
+  }
+
+  nav, #logo, header p {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  #logo {
+    margin-right: 0;
+  }
 }
