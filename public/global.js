@@ -7,40 +7,36 @@
  */
 
 "use strict";
+
 (function() {
 
   window.addEventListener("load", init);
 
   let currentQuote = [];
+  let isFrench = true;
 
   /**
    * sets up necessary functionality when page loads
    */
   function init() {
-    let languageQuote = true;
-    id("translation").addEventListener("click", () => {
-      languageQuote = translateQuote(languageQuote);
-    });
+    id("translation").addEventListener("click", translateQuote);
     fetchQuote();
   }
 
   /**
    * Translates the quote between French and English.
-   * @param {boolean} languageQuote - current language state of the quote.
-   * @returns {boolean} - the new language state of the quote.
    */
-  function translateQuote(languageQuote) {
+  function translateQuote() {
     let frenchQuote = currentQuote.fr;
     let englishQuote = currentQuote.en;
     let quoteDisplay = qs("blockquote > p");
-    if (languageQuote) {
+    if (isFrench) {
       quoteDisplay.textContent = englishQuote;
       quoteDisplay.classList.add("english-quote-font");
     } else {
       quoteDisplay.textContent = frenchQuote;
       quoteDisplay.classList.remove("english-quote-font");
     }
-    return !languageQuote;
   }
 
   /**
@@ -61,9 +57,13 @@
 
     try {
       let response = await fetch('quotes.json');
-      const quotes = await response.json();
-      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-      displayQuote(randomQuote);
+      await statusCheck(response);
+      const data = await response.json();
+      const quotes = data.quotes;
+      let randomIndex = Math.floor(Math.random() * quotes.length);
+      const randomQuote = quotes[randomIndex];
+      currentQuote = randomQuote;
+      displayQuote(currentQuote);
     } catch (error) {
       handleErrorQuote(error, "Sorry, we couldn't load a quote at this time.");
     }
