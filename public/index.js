@@ -174,7 +174,7 @@
       const menuContainer = id("writeups-menu");
 
       try {
-          const response = await fetch('/write-ups/');
+          const response = await fetch("writeups.json");
           let res = await statusCheck(response);
           const data = await res.json();
 
