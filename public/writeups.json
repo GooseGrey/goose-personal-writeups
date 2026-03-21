@@ -1,10 +1,8 @@
 {
   "PicoCTF": {
-    "Binary-Exploitation": {
-      "test1": null
-    },
     "Cryptography": {
-      "test2": null
+      "Easy_Inspect_HMTL": null,
+      "Easy_Local_Authority": null
     },
     "Web": {
       "test3": null
