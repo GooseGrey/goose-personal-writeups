@@ -1,11 +1,8 @@
 {
   "PicoCTF": {
-    "Cryptography": {
+    "Web": {
       "Easy_Inspect_HMTL": null,
       "Easy_Local_Authority": null
-    },
-    "Web": {
-      "test3": null
     }
   }
 }
