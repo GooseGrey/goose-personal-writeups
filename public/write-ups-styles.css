@@ -85,3 +85,127 @@ div.challenge p {
 #display img {
   margin-bottom: 20px;
 }
+
+#display {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.7;
+  color: rgb(255, 250, 223);
+  font-family: 'Roboto Mono', monospace;
+}
+
+#display h1,
+#display h2,
+#display h3,
+#display h4 {
+  color: rgb(84, 188, 103); 
+  margin-top: 1.5em;
+  margin-bottom: 0.7em;
+  line-height: 1.3;
+}
+
+#display h1 {
+  font-size: 2.2rem;
+  border-bottom: 2px solid rgba(84, 188, 103, 0.3);
+  padding-bottom: 10px;
+}
+
+#display h2 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid rgba(84, 188, 103, 0.15);
+  padding-bottom: 8px;
+}
+
+#display p {
+  margin-bottom: 1.2em;
+}
+
+#display a {
+  color: rgb(84, 188, 103);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+#display a:hover {
+  border-bottom: 1px solid rgb(84, 188, 103);
+}
+
+#display ul,
+#display ol {
+  display: block; 
+  padding-left: 2em;
+  margin-bottom: 1.5em;
+}
+
+#display ul {
+  list-style-type: square; 
+}
+
+#display ol {
+  list-style-type: decimal;
+}
+
+#display li {
+  list-style: inherit;
+  margin-bottom: 0.5em;
+}
+
+#display li p:hover {
+  text-decoration: none;
+  cursor: text;
+}
+
+#display pre {
+  background-color: rgb(2, 10, 20);
+  border: 1px solid rgba(84, 188, 103, 0.4);
+  border-radius: 5px;
+  padding: 15px;
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+}
+
+#display code {
+  background-color: rgba(255, 250, 223, 0.1);
+  color: rgb(84, 188, 103);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+#display pre code {
+  background-color: transparent;
+  padding: 0;
+  color: rgb(230, 240, 230); 
+}
+
+#display blockquote {
+  border-left: 4px solid rgb(84, 188, 103);
+  background: rgba(84, 188, 103, 0.05);
+  margin: 0 0 1.5em 0;
+  padding: 15px 20px;
+  border-radius: 0 5px 5px 0;
+  font-style: italic;
+  color: rgba(255, 250, 223, 0.8);
+}
+
+#display blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+#display img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid rgba(84, 188, 103, 0.3);
+  display: block;
+  margin: 1.5em 0;
+}
+
+#back-button {
+  margin-bottom: 30px;
+  padding: 8px 20px;
+  display: inline-block;
+}
