@@ -33,9 +33,11 @@
     if (isFrench) {
       quoteDisplay.textContent = englishQuote;
       quoteDisplay.classList.add("english-quote-font");
+      isFrench = false;
     } else {
       quoteDisplay.textContent = frenchQuote;
       quoteDisplay.classList.remove("english-quote-font");
+      isFrench = true;
     }
   }
 
