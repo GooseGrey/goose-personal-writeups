@@ -1,7 +1,12 @@
 {
-  "PicoCTF": {
+  "CyLab": {
+    "General": {
+      "Easy_Undo": null
+    }
+  },
+  "PicoCTF (Archived)": {
     "Web": {
-      "Easy_Inspect_HMTL": null,
+      "Easy_Inspect_HTML": null,
       "Easy_Local_Authority": null
     }
   }
