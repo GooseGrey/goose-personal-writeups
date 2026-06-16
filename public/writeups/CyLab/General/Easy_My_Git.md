@@ -1,4 +1,4 @@
-# CyLab - "Git Config"
+# CyLab - "My Git"
 ## General Skills - Easy
 
 This challenge has you interact with Git configuration to push a file as a specific user and retrieve the flag.
