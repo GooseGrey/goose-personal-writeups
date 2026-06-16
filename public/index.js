@@ -135,6 +135,8 @@
 
         const currentId = (idPrefix ? `${idPrefix}/` : '') + key.replace(/[^a-z0-9]/gi, '-')
 
+        console.log(`Creating menu element for key: "${key}" with id: "${currentId}"`);
+
         if (!idPrefix) {
           const div = document.createElement('div');
           div.id = currentId;
