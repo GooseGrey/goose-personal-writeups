@@ -7,11 +7,13 @@
       "Easy_Piece_by_Piece": null,
       "Easy_Ping_Cmd": null,
       "Easy_Printer_Shares": null,
+      "Easy_Sudo_make_me_a_sandwich": null,
       "Easy_Undo": null
     },
     "Web": {
       "Easy_Inspect_HTML": null,
-      "Easy_Local_Authority": null
+      "Easy_Local_Authority": null,
+      "Easy_Old_Sessions": null
     }
   }
 }
