@@ -1,5 +1,4 @@
-# PicoCTF - "Inspect HTML"
-
+# CyLab - "Inspect HTML"
 ## Web Exploitation - Easy
 
 ### Login Page Test

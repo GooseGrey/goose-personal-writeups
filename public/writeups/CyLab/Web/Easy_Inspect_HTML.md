@@ -1,6 +1,5 @@
-# PicoCTF - "Inspect HTML"
-
-## Cryptography - Easy
+# CyLab - "Inspect HTML"
+## Web exploitation - Easy
 
 ### Inspect the Page
 
